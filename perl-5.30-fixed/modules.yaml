@@ -204,6 +204,31 @@ version: 2
 data:
   name: perl-DBI
   stream: master
+  version: 1
+  context: jjjjjjjjj
+  arch: x86_64
+  summary: Perl-DBI
+  description: Perl-DBI
+  license:
+    module:
+    - MIT
+  dependencies:
+    - buildrequires:
+        perl: [5.30]
+      requires:
+        perl: [5.30]
+  profiles:
+    default:
+      rpms: ["test-perl-DBI"]
+  artifacts:
+    rpms: ["test-perl-DBI-0:1-2.5.30.x86_64"]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl-DBI
+  stream: master
   version: 2
   context: jjjjjjjjj
   arch: x86_64
