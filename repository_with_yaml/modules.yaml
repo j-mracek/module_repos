@@ -1,0 +1,108 @@
+---
+document: modulemd
+version: 2
+data:
+  name: perl
+  stream: 5.24
+  version: 1
+  context: aaaaaaaa
+  arch: x86_64
+  summary: Perl
+  description: Perl
+  license:
+    module:
+    - MIT
+  profiles:
+    default:
+      rpms: ["test-perl-5-24"]
+  artifacts:
+    rpms: ["test-perl-5-24-0:5.24-1.x86_64"]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl
+  stream: 5.24
+  version: 2
+  context: bbbbbbbb
+  arch: x86_64
+  summary: Perl
+  description: Perl
+  license:
+    module:
+    - MIT
+  profiles:
+    default:
+      rpms: ["test-perl-5-24"]
+  artifacts:
+    rpms: [test-"perl-5-24-0:5.24-2.x86_64"]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl-DBI
+  stream: master
+  version: 1
+  context: fffffffff
+  arch: x86_64
+  summary: Perl-DBI
+  description: Perl-DBI
+  license:
+    module:
+    - MIT
+  dependencies:
+    - buildrequires:
+        perl: [5.24]
+      requires:
+        perl: [5.24]
+  profiles:
+    default:
+      rpms: ["test-perl-DBI-master"]
+  artifacts:
+    rpms: ["test-perl-DBI-master-0:1.1.x86_64"]
+...
+---
+document: modulemd
+version: 2
+data:
+  name: perl-DBI
+  stream: master
+  version: 1
+  context: gggggggg
+  arch: x86_64
+  summary: Perl-DBI
+  description: Perl-DBI
+  license:
+    module:
+    - MIT
+  dependencies:
+    - buildrequires:
+        perl: [5.24]
+      requires:
+        perl: [5.24]
+  profiles:
+    default:
+      rpms: ["test-perl-DBI-master"]
+  artifacts:
+    rpms: ["test-perl-DBI-master-0:1-2.x86_64"]
+...
+---
+document: modulemd-defaults
+version: 1
+data:
+    module: perl
+    stream: 5.24
+    profiles:
+      5.24: [default]
+...
+---
+document: modulemd-defaults
+version: 1
+data:
+    module: perl-DBI
+    stream: master
+    profiles:
+      st1: [default]
+...
