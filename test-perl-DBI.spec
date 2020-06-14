@@ -23,7 +23,7 @@ Provides: module(%{?mod_name})
 Provides: module(%{?mod_name}:%{?mod_stream})
 Provides: module(%{?mod_name}:%{?mod_stream}:%{?mod_context})
 
-Requires: (test-perl = 5.24 with module(I_am_from_module))
+Requires: (test-perl = 5.24 with module(perl:5.24))
 %else
 Requires: (test-perl = 5.24 without module(I_am_from_module))
 %endif

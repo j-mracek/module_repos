@@ -16,6 +16,7 @@ Conflicts: %{base_name}
 %if %{with modules}
 Provides: %{base_name}%{?_isa} = %{version}-%{release}
 Provides: %{base_name} = %{version}-%{release}
+Provides: module(I_am_from_module)
 Provides: module(%{?mod_name})
 Provides: module(%{?mod_name}:%{?mod_stream})
 Provides: module(%{?mod_name}:%{?mod_stream}:%{?mod_context})
