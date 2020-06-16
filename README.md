@@ -31,8 +31,12 @@ content in distribution (`dnf module list` or other commands in `DNF` unchanged)
 
 Compatibility
 -------------
-The proposal is 100% compatible with dnf-4/yum-4. Only some internal workflow in DNF could be
-simplify or removed.
+The proposal is 100% compatible with dnf-4/yum-4 (Fedora 27+). Only some internal workflow in DNF
+could be simplify or removed:
+ - modular filtering
+ - modular solver
+ - applicability of modular errata
+
 No changes will be required on a customer side.
 
 Requirements
@@ -119,6 +123,22 @@ It is also possible to use dynamic requires like:
 Requires: test-perl%{?module_require_1} = 5.24
 ```
 
+Example data
+------------
+
+3 repositories are provided to demonstrate the vision in following directories:
+ - obsoletes
+   - demonstration of obsolete of perl package is not applicable to modular packages without
+   modular filtering
+   - repository is without modular yaml
+ - repository
+   - demonstrates self protection of modular packages without modular filtering
+   - repository is without modular yaml
+ - repository_with_yaml
+   - repository is with modular yaml
+   - demonstrates compatibility with dnf-4
+
+All SPECs used for generation of test RPMs are provided in the project.
 
 Problem - Prevent upgrade of non-modular package to modular
 -----------------------------------------------------------
